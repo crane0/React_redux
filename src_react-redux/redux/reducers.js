@@ -4,7 +4,7 @@
 * */
 import {INCREMENT, DECREMENT} from './action_types'
 
-export function count(state = 1, action) {
+export function count(state = 0, action) {
     switch (action.type) {
         case INCREMENT : {
             return state + action.number
