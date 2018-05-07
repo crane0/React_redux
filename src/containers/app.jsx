@@ -9,6 +9,7 @@ import {connect} from 'react-redux'
 import {increment, decrement, incrementAsync} from "../redux/actions";
 //这个 React的 API
 import Count from '../components/count'
+import {DECREMENT, INCREMENT} from "../redux/action_types";
 
 //向外暴露的连接APP组件的包装组件
 /*
@@ -20,4 +21,18 @@ export default connect(
     state => ({count: state}),
     {increment, decrement, incrementAsync}
 )(Count)
+
+//const mapStateToProps = state => ({count: state})
+
+/*const mapDispatchToProps = dispatch => ({
+    increment : number => dispatch(increment(number)),
+    decrement : number => dispatch(decrement(number)),
+    incrementAsync : number => {
+        return dispatch => {
+            setTimeout(() => {
+                dispatch(increment(number))
+            }, 1000)
+        }
+    }
+})*/
 
